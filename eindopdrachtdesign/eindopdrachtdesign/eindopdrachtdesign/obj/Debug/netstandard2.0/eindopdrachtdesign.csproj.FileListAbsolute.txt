@@ -1,0 +1,15 @@
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\bin\Debug\netstandard2.0\eindopdrachtdesign.deps.json
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\bin\Debug\netstandard2.0\eindopdrachtdesign.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\bin\Debug\netstandard2.0\eindopdrachtdesign.pdb
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.csproj.AssemblyReference.cache
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.GeneratedMSBuildEditorConfig.editorconfig
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.AssemblyInfoInputs.cache
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.AssemblyInfo.cs
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.csproj.CoreCompileInputs.cache
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\XamlC.stamp
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\refint\eindopdrachtdesign.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\eindopdrachtdesign.pdb
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\ref\eindopdrachtdesign.dll
