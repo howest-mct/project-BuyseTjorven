@@ -21,10 +21,11 @@ namespace eindopdrachtdesign
 
         private async void LoadBooksAsync()
         {
-            OpenBook book = await BookRepository.GetBook();
-            Console.WriteLine(book.PublishDate.ToString());
-            Console.WriteLine(book.Publishers[0].ToString());
+            //OpenBookDetail book = await BookRepository.GetBook();
+            //Console.WriteLine(book.PublishDate.ToString());
+            //Console.WriteLine(book.Publishers[0].ToString());
             Console.WriteLine("ja?");
+            paginatest.ItemsSource = await BookRepository.GetBooks();
         }
 
         private void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)
