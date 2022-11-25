@@ -631,3 +631,4 @@ C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\o
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll
