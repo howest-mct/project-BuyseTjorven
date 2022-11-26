@@ -6,14 +6,14 @@ using System.Text;
 
 namespace eindopdrachtdesign.Models
 {
-    public class OpenBooks
+    public class FilterResult
     {
         [JsonProperty("name")]
         public string naam { get; set; }
         [JsonProperty("works")]
-        public List<Boeken> works { get; set; }
+        public List<Works> works { get; set; }
     }
-    public class Boeken
+    public class Works
     {
         [JsonProperty("title")]
         public string Title { get; set; }
