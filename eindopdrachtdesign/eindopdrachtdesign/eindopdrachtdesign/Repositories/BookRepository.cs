@@ -19,7 +19,7 @@ namespace eindopdrachtdesign.Repositories
             //client.DefaultRequestHeaders.Add("Accept", "application/json");
             return client;
         }
-        public static async Task<List<OpenBooks>> GetBooks()
+        public static async Task<List<Boeken>> GetBooks()
         {
             string url = $"{_BASEURL}subjects/hate.json?limit=20";
             using (HttpClient client = GetHttpClient())
@@ -30,7 +30,13 @@ namespace eindopdrachtdesign.Repositories
                     Debug.WriteLine(json);
                     OpenBooks books = JsonConvert.DeserializeObject<OpenBooks>(json);
                     Console.WriteLine(books.naam);
-                    List<OpenBooks> test = new List<OpenBooks>();
+                    for(int i =0; i<books.works.Count(); i++)
+                    {
+                        Console.WriteLine(books.works[i].Title);
+                    }
+                    //list van boeken maken en terugsturen en dan in andere code de books.test[i].title doen voor weergeven.
+                    List<Boeken> test = new List<Boeken>();
+                    test = books.works;
                     return test;
                 }
                 catch (Exception ex)
