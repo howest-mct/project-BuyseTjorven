@@ -11,12 +11,13 @@ namespace eindopdrachtdesign.Models
         [JsonProperty("name")]
         public string naam { get; set; }
         [JsonProperty("works")]
-        public List<Works> works { get; set; }
+        public List<Work> works { get; set; }
     }
-    public class Works
+    public class Work
     {
         [JsonProperty("title")]
         public string Title { get; set; }
-
+        [JsonProperty("key")]
+        public string Key { get; set; }
     }
 }

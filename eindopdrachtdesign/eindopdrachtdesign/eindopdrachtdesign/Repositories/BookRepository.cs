@@ -12,16 +12,16 @@ namespace eindopdrachtdesign.Repositories
 {
     public static class BookRepository
     {
-        public const string _BASEURL = "https://openlibrary.org/";
+        public const string _BASEURL = "https://openlibrary.org";
         public static HttpClient GetHttpClient()
         {
             HttpClient client = new HttpClient();
             //client.DefaultRequestHeaders.Add("Accept", "application/json");
             return client;
         }
-        public static async Task<List<Works>> GetBooks()
+        public static async Task<List<Work>> GetBooks()
         {
-            string url = $"{_BASEURL}subjects/hate.json?limit=20";
+            string url = $"{_BASEURL}/subjects/hate.json?limit=20";
             using (HttpClient client = GetHttpClient())
             {
                 try
@@ -34,7 +34,7 @@ namespace eindopdrachtdesign.Repositories
                     //{
                     //    Console.WriteLine(books.works[i].Title);
                     //}
-                    List<Works> test = new List<Works>();
+                    List<Work> test = new List<Work>();
                     test = books.works;
                     return test;
                 }
@@ -45,18 +45,17 @@ namespace eindopdrachtdesign.Repositories
 
             }
         }
-        public static async Task<List<OpenBookDetail>> GetBook()
+        public static async Task<OpenBookDetail> GetBookk(string key)
         {
-            string url = $"{_BASEURL}isbn/9780140328721.json";
+            string url = $"{_BASEURL}{key}.json";
             using (HttpClient client = GetHttpClient())
             {
                 try
                 {
                     string json = await client.GetStringAsync(url);
-                    List<OpenBookDetail> books = new List<OpenBookDetail>();
-                    books.Add(JsonConvert.DeserializeObject<OpenBookDetail>(json));
+                    OpenBookDetail book = JsonConvert.DeserializeObject<OpenBookDetail>(json);
 
-                    return books;
+                    return book;
                 }
                 catch (Exception ex)
                 {

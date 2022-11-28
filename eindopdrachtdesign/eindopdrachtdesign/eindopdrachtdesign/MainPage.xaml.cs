@@ -1,5 +1,6 @@
 ﻿using eindopdrachtdesign.Models;
 using eindopdrachtdesign.Repositories;
+using eindopdrachtdesign.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,9 +29,19 @@ namespace eindopdrachtdesign
             paginatest.ItemsSource = await BookRepository.GetBooks();
         }
 
-        private void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            //stap 1 haal geselecteerde board op
+            Work selectedbook = (Work)paginatest.SelectedItem;
+            //Bookdetails book = new Bookdetails();
+            OpenBookDetail book = await BookRepository.GetBookk(selectedbook.Key);
+            Console.WriteLine("whut is happeningk");
+            //stap 2 chach of selectboard niet null is
+            if (book != null)
+            {
+                 await Navigation.PushAsync(new Bookdetails(book));
+            }
+            //paginatest.SelectedItem = null;
         }
     }
 }
