@@ -13,10 +13,13 @@ namespace eindopdrachtdesign.Views
     public partial class Bookdetails : ContentPage
     {
         public Bookdetails(OpenBookDetail book)
-        {
+        { 
+            InitializeComponent();
             this.BindingContext = book;
             this.Title = book.Title;
-            InitializeComponent();
+            lbl_publishdate.Text = book.PublishDate;
+            Console.WriteLine(book.PublishDate);
+            Console.WriteLine("iets");
         }
     }
 }

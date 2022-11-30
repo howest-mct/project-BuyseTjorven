@@ -35,6 +35,8 @@ namespace eindopdrachtdesign
             Work selectedbook = (Work)paginatest.SelectedItem;
             //Bookdetails book = new Bookdetails();
             OpenBookDetail book = await BookRepository.GetBookk(selectedbook.Key);
+            Console.WriteLine(book.Title);
+            Console.WriteLine(book.PublishDate);
             Console.WriteLine("whut is happeningk");
             //stap 2 chach of selectboard niet null is
             if (book != null)

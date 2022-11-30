@@ -48,6 +48,7 @@ namespace eindopdrachtdesign.Repositories
         public static async Task<OpenBookDetail> GetBookk(string key)
         {
             string url = $"{_BASEURL}{key}.json";
+            Console.WriteLine(url);
             using (HttpClient client = GetHttpClient())
             {
                 try

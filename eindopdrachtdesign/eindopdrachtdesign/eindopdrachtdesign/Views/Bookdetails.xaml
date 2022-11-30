@@ -7,9 +7,9 @@
             <Label Text="Titel" />
             <Label Text="{Binding Title}" />
             <Label Text="publishers"/>
-            <Label Text="{Binding Publishers}"/>
+            <Label Text="{Binding publishers}"/>
             <Label Text="Publishdate"/>
-            <Label Text="{Binding PublishDate}"/>
+            <Label x:Name="lbl_publishdate"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
