@@ -22,6 +22,7 @@ namespace eindopdrachtdesign.Repositories
         public static async Task<List<Work>> GetBooks()
         {
             string url = $"{_BASEURL}/subjects/hate.json?limit=20";
+            Console.WriteLine(url);
             using (HttpClient client = GetHttpClient())
             {
                 try
@@ -29,11 +30,11 @@ namespace eindopdrachtdesign.Repositories
                     string json = await client.GetStringAsync(url);
                     Debug.WriteLine(json);
                     FilterResult books = JsonConvert.DeserializeObject<FilterResult>(json);
-                    //Console.WriteLine(books.naam);
-                    //for(int i =0; i<books.works.Count(); i++)
-                    //{
-                    //    Console.WriteLine(books.works[i].Title);
-                    //}
+                    Console.WriteLine(books.naam);
+                    for(int i =0; i<books.works.Count(); i++)
+                    {
+                        Console.WriteLine(books.works[i].Title);
+                    }
                     List<Work> test = new List<Work>();
                     test = books.works;
                     return test;

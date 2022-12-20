@@ -17,8 +17,8 @@ namespace eindopdrachtdesign.Views
             InitializeComponent();
             this.BindingContext = book;
             this.Title = book.Title;
-            lbl_publishdate.Text = book.PublishDate;
-            Console.WriteLine(book.PublishDate);
+            this.lbl_description.Text = book.Description.ToString();
+            Console.WriteLine(book.Description);
             Console.WriteLine("iets");
         }
     }

@@ -8,14 +8,14 @@ namespace eindopdrachtdesign.Models
 {
     public class OpenBookDetail
     {
-        [JsonProperty("publish_date")]
-        public string PublishDate { get; set; }
+        [JsonProperty("title")]
+        public String Title { get; set; }
+
+        [JsonProperty("description")]
+        public Object Description { get; set; }
 
         [JsonProperty("publishers")]
         public List<String> Publishers { get; set; }
-
-        [JsonProperty("title")]
-        public String Title{ get; set; }
 
     }
 }

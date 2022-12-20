@@ -6,10 +6,8 @@
         <StackLayout>
             <Label Text="Titel" />
             <Label Text="{Binding Title}" />
-            <Label Text="publishers"/>
-            <Label Text="{Binding publishers}"/>
-            <Label Text="Publishdate"/>
             <Label x:Name="lbl_publishdate"/>
+            <Label x:Name="lbl_description"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
