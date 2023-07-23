@@ -1,0 +1,15 @@
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\bin\Debug\netstandard2.0\eindopdracht2.deps.json
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\bin\Debug\netstandard2.0\eindopdracht2.dll
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\bin\Debug\netstandard2.0\eindopdracht2.pdb
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.csproj.AssemblyReference.cache
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.GeneratedMSBuildEditorConfig.editorconfig
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.AssemblyInfoInputs.cache
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.AssemblyInfo.cs
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.csproj.CoreCompileInputs.cache
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.dll
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\refint\eindopdracht2.dll
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\eindopdracht2.pdb
+C:\designeind\eindopdracht2\eindopdracht2\eindopdracht2\obj\Debug\netstandard2.0\ref\eindopdracht2.dll

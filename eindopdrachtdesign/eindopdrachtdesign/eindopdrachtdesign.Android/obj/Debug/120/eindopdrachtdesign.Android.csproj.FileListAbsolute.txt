@@ -632,3 +632,8 @@ C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\o
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\src\mono\JavaInteropTypeManager.java
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.arm64-v8a.o
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.armeabi-v7a.o
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.x86.o
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.x86_64.o
