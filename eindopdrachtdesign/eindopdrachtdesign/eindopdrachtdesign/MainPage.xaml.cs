@@ -17,7 +17,7 @@ namespace eindopdrachtdesign
         {
             InitializeComponent();
             LoadBooksAsync();
-            Console.WriteLine("huh");
+            Console.WriteLine("mainpageload done!!");
         }
 
         private async void LoadBooksAsync()
@@ -26,10 +26,10 @@ namespace eindopdrachtdesign
             //OpenBookDetail book = await BookRepository.GetBook();
             //Console.WriteLine(book.PublishDate.ToString());
             //Console.WriteLine(book.Publishers[0].ToString());
-            while(i<300)
-            { Console.WriteLine("ja?");
-                i++;
-            }
+            Console.WriteLine("LoadAsync");
+            List<Boards> boards = new List<Boards>();
+            boards = await BookRepository.GetBoards();
+            Console.WriteLine("request gedaan");
             //paginatest.ItemsSource = await BookRepository.GetBooks();
         }
 
@@ -41,7 +41,7 @@ namespace eindopdrachtdesign
             //OpenBookDetail book = await BookRepository.GetBookk(selectedbook.Key);
             //Console.WriteLine(book.Title);
             //Console.WriteLine(book.Description);
-            Console.WriteLine("whut is happeningk");
+            Console.WriteLine("item_clicked");
             //stap 2 chach of selectboard niet null is
             //if (book != null)
             //{

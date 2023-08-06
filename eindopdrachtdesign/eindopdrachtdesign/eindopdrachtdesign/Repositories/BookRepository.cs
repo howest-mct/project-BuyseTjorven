@@ -3,68 +3,68 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using GraphQL.Client;
 using System.Text;
 using System.Threading.Tasks;
 using eindopdrachtdesign.Models;
+using GraphQL.Client.Abstractions;
+using GraphQL;
 using Newtonsoft.Json;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
+using System.Net;
+using System.IO;
 
 namespace eindopdrachtdesign.Repositories
 {
     public static class BookRepository
     {
-        public const string _BASEURL = "https://openlibrary.org";
-        public static HttpClient GetHttpClient()
+        public const string _BASEURL = "https://api.monday.com/v2";
+        public class MondayHelper
         {
-            HttpClient client = new HttpClient();
-            //client.DefaultRequestHeaders.Add("Accept", "application/json");
-            return client;
-        }
-        public static async Task<List<Work>> GetBooks()
-        {
-            string url = $"{_BASEURL}/subjects/hate.json?limit=20";
-            Console.WriteLine(url);
-            using (HttpClient client = GetHttpClient())
+            private const string MondayApiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjI2NjE2MzYxOCwiYWFpIjoxMSwidWlkIjo0NTIwMDIyMSwiaWFkIjoiMjAyMy0wNy0wMVQwODoyNjo1NS4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTc2Mjk1NjYsInJnbiI6ImV1YzEifQ.w_ElgYIGXQZDomYCcfu0PL8z3WNjpCL4t9rESot9ai4";
+            private const string MondayApiUrl = "https://api.monday.com/v2/";
+
+            /// <summary>
+            /// Get a JSON response from the Monday.com V2 API.
+            /// </summary>
+            /// <param name="query">GraphQL Query to apply to the Monday.com production instance for Grange.</param>
+            /// <returns>JSON response of query results.</returns>
+            /// <remarks>
+            /// Query must be in JSON,
+            ///		e.g. = "{\"query\": \"{boards(ids: 1234) {id name}}\"}"
+            /// </remarks>
+            public async Task<string> QueryMondayApiV2(string query)
             {
-                try
+                byte[] dataBytes = System.Text.Encoding.UTF8.GetBytes(query);
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(MondayApiUrl);
+                request.ContentType = "application/json";
+                request.Method = "POST";
+                request.Headers.Add("Authorization", MondayApiKey);
+
+                using (Stream requestBody = request.GetRequestStream())
                 {
-                    string json = await client.GetStringAsync(url);
-                    Debug.WriteLine(json);
-                    FilterResult books = JsonConvert.DeserializeObject<FilterResult>(json);
-                    Console.WriteLine(books.naam);
-                    for(int i =0; i<books.works.Count(); i++)
-                    {
-                        Console.WriteLine(books.works[i].Title);
-                    }
-                    List<Work> test = new List<Work>();
-                    test = books.works;
-                    return test;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
+                    await requestBody.WriteAsync(dataBytes, 0, dataBytes.Length);
                 }
 
+                using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return await reader.ReadToEndAsync();
+                }
             }
         }
-        public static async Task<OpenBookDetail> GetBookk(string key)
+
+        public static async Task<List<Boards>> GetBoards()
         {
-            string url = $"{_BASEURL}{key}.json";
-            Console.WriteLine(url);
-            using (HttpClient client = GetHttpClient())
-            {
-                try
-                {
-                    string json = await client.GetStringAsync(url);
-                    OpenBookDetail book = JsonConvert.DeserializeObject<OpenBookDetail>(json);
-
-                    return book;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-            }
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2("{\"query\": \"{boards(limit:2){id name}}\"}");
+            Console.WriteLine(json);
+            Console.WriteLine("hiervoor de print");
+        List<Boards> boards = new List<Boards>();
+            return boards;
         }
     }
 }

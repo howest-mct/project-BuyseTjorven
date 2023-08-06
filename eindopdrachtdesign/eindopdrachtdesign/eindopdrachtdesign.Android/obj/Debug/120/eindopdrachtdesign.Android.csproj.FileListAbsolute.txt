@@ -637,3 +637,11 @@ C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\o
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.armeabi-v7a.o
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.x86.o
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\marshal_methods.x86_64.o
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\GraphQL.Client.Abstractions.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\GraphQL.Client.Abstractions.Websocket.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\GraphQL.Client.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\GraphQL.Primitives.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\System.Reactive.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\System.Threading.Tasks.Extensions.dll
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign.Android\obj\Debug\120\android\assets\GraphQL.Client.Serializer.Newtonsoft.dll
