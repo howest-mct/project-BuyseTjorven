@@ -32,6 +32,8 @@ namespace eindopdrachtdesign
                 Console.WriteLine(board.id);
             }
             lvwBoards.ItemsSource = boards.data.board;
+
+
         }
 
         private async void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)

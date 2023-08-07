@@ -96,5 +96,35 @@ namespace eindopdrachtdesign.Repositories
                 return null;
             }
         }
+        public static async Task<List<Column_value>> GetColumn_ValuesAsync(string BoardId, string ItemId)
+        {
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2($"{{\"query\":\"query{{boards(ids: [{BoardId}]){{items(ids:{ItemId}){{column_values{{title id value text}}}}}}}}\"}}"); //nog aanpassen
+            Console.WriteLine(json);
+            Console.WriteLine("json geprint van colums");
+            GraphQlColumnsResponse response;
+
+            if (json != null)
+            {
+                response = JsonConvert.DeserializeObject<GraphQlColumnsResponse>(json);
+                List<Column_value> items = new List<Column_value>();
+                if(items != null)
+                {
+                    Console.WriteLine("voor items");
+                    //items = response.data.boards[0].items[0].values;
+                    Console.WriteLine(items);
+                    Console.WriteLine("voorbij itms");
+                    return items;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

@@ -30,6 +30,13 @@ namespace eindopdrachtdesign.Views
                 Console.WriteLine(item.name);
             }
             lvwTrelloLists.ItemsSource = items;
+
+            List<Column_value> columns = await BookRepository.GetColumn_ValuesAsync("1243926851", MyBoard.id);
+            foreach(Column_value column in columns)
+            {
+                Console.WriteLine(column.title);
+            }
+
         }
     }
 }
