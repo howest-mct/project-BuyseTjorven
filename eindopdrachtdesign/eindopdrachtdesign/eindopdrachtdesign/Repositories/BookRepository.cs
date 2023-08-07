@@ -60,8 +60,8 @@ namespace eindopdrachtdesign.Repositories
         public static async Task<GraphQlBoardsResponse> GetBoards()
         {
             var helper = new MondayHelper();
-            string json = await helper.QueryMondayApiV2("{\"query\": \"{boards(limit:2){id name}}\"}");
-            Console.WriteLine(json);
+            string json = await helper.QueryMondayApiV2("{\"query\": \"{boards{id name}}\"}");
+            //Console.WriteLine(json);
             Console.WriteLine("hiervoor de print");
             GraphQlBoardsResponse boards;
 
@@ -75,6 +75,26 @@ namespace eindopdrachtdesign.Repositories
                 return null;
             }
 
+        }
+
+        public static async Task<List<Item>> GetItemsAsync(string BoardId)
+        {
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2($"{{\"query\": \"{{boards(ids: [{BoardId}]){{id name items{{name id}}}}}}\"}}");
+            Console.WriteLine(json);
+            GraphQlBoardsResponse response;
+
+            if (json != null)
+            {
+                response = JsonConvert.DeserializeObject<GraphQlBoardsResponse>(json);
+                List<Item> items = new List<Item>();
+                items = response.data.board[0].items;
+                return items;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

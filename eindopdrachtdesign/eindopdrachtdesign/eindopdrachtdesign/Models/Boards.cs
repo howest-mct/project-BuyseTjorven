@@ -22,6 +22,16 @@ namespace eindopdrachtdesign.Models
 
         [JsonProperty("id")]
         public string id { get; set; }
+
+        [JsonProperty("items")]
+        public List<Item> items { get; set; }
+
+    }
+
+    public class Item
+    {
+        [JsonProperty ("name")]
+        public string name { get; set; }
     }
 
 }

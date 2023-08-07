@@ -32,7 +32,13 @@ namespace eindopdrachtdesign
                 Console.WriteLine(board.id);
             }
             lvwBoards.ItemsSource = boards.data.board;
-            //paginatest.ItemsSource = await BookRepository.GetBooks();
+            
+            Board test = boards.data.board[0];
+            List<Item> items = await BookRepository.GetItemsAsync(test.id);
+            foreach(Item item in items)
+            {
+                Console.WriteLine(item.name);
+            }
         }
 
         private async void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)
