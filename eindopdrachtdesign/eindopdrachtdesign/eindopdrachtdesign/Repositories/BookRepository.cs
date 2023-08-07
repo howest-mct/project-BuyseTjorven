@@ -57,14 +57,24 @@ namespace eindopdrachtdesign.Repositories
             }
         }
 
-        public static async Task<List<Boards>> GetBoards()
+        public static async Task<GraphQlBoardsResponse> GetBoards()
         {
             var helper = new MondayHelper();
             string json = await helper.QueryMondayApiV2("{\"query\": \"{boards(limit:2){id name}}\"}");
             Console.WriteLine(json);
             Console.WriteLine("hiervoor de print");
-        List<Boards> boards = new List<Boards>();
-            return boards;
+            GraphQlBoardsResponse boards;
+
+            if(json != null)
+            {
+                boards = JsonConvert.DeserializeObject<GraphQlBoardsResponse>(json);
+                return boards;
+            }
+            else
+            {
+                return null;
+            }
+
         }
     }
 }

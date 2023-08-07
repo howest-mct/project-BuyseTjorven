@@ -7,12 +7,22 @@ namespace eindopdrachtdesign.Models
 {
     public class GraphQlBoardsResponse
     {
-        //[JsonProperty("data")]
-        public Boards boards { get; set; }
+        [JsonProperty("data")]
+        public Boards data { get; set; }
     }
     public class Boards
     {
-        public string name { get; set; }
+        [JsonProperty("boards")]
+        public List<Board> board { get; set; }
     }
+    public class Board
+    {
+        [JsonProperty("name")]
+        public string name { get; set; }
+
+        [JsonProperty("id")]
+        public string id { get; set; }
+    }
+
 }
     

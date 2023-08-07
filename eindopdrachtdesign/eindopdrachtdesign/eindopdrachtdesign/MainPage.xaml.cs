@@ -16,20 +16,24 @@ namespace eindopdrachtdesign
         public MainPage()
         {
             InitializeComponent();
-            LoadBooksAsync();
+            LoadBoardsAsync();
             Console.WriteLine("mainpageload done!!");
         }
 
-        private async void LoadBooksAsync()
+        private async void LoadBoardsAsync()
         {
             int i = 0;
             //OpenBookDetail book = await BookRepository.GetBook();
             //Console.WriteLine(book.PublishDate.ToString());
             //Console.WriteLine(book.Publishers[0].ToString());
             Console.WriteLine("LoadAsync");
-            List<Boards> boards = new List<Boards>();
+            GraphQlBoardsResponse boards;
             boards = await BookRepository.GetBoards();
-            Console.WriteLine("request gedaan");
+            foreach(Board board in boards.data.board)
+            {
+                Console.WriteLine(board.name);
+                Console.WriteLine(board.id);
+            }
             //paginatest.ItemsSource = await BookRepository.GetBooks();
         }
 
