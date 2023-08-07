@@ -32,13 +32,6 @@ namespace eindopdrachtdesign
                 Console.WriteLine(board.id);
             }
             lvwBoards.ItemsSource = boards.data.board;
-            
-            Board test = boards.data.board[0];
-            List<Item> items = await BookRepository.GetItemsAsync(test.id);
-            foreach(Item item in items)
-            {
-                Console.WriteLine(item.name);
-            }
         }
 
         private async void paginatest_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -56,6 +49,17 @@ namespace eindopdrachtdesign
                  //await Navigation.PushAsync(new Bookdetails(book));
             //}
             //paginatest.SelectedItem = null;
+        }
+
+        private void lvwBoards_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (lvwBoards.SelectedItem != null)
+            {
+                Board selected = (Board)lvwBoards.SelectedItem;
+                Navigation.PushAsync(new ItemListPage(selected));
+                //Deselecteren
+                lvwBoards.SelectedItem = null;
+            }
         }
     }
 }
