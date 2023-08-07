@@ -23,9 +23,6 @@ namespace eindopdrachtdesign
         private async void LoadBoardsAsync()
         {
             int i = 0;
-            //OpenBookDetail book = await BookRepository.GetBook();
-            //Console.WriteLine(book.PublishDate.ToString());
-            //Console.WriteLine(book.Publishers[0].ToString());
             Console.WriteLine("LoadAsync");
             GraphQlBoardsResponse boards;
             boards = await BookRepository.GetBoards();
@@ -34,6 +31,7 @@ namespace eindopdrachtdesign
                 Console.WriteLine(board.name);
                 Console.WriteLine(board.id);
             }
+            lvwBoards.ItemsSource = boards.data.board;
             //paginatest.ItemsSource = await BookRepository.GetBooks();
         }
 

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="eindopdrachtdesign.MainPage" Title="Boekenlijst">
+             x:Class="eindopdrachtdesign.MainPage" Title="Boards">
 
-    <ListView x:Name="paginatest" SeparatorColor="White" ItemSelected="paginatest_ItemSelected">
+    <ListView x:Name="lvwBoards" SeparatorColor="White" >
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -13,7 +13,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Frame CornerRadius="7" Margin="8" BackgroundColor='{Binding ColorHex}' />
-                        <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" VerticalOptions="Center" />
+                        <Label Grid.Column="1" Text="{Binding name}" TextColor="Black" VerticalOptions="Center" />
                     </Grid>
                 </ViewCell>
 
