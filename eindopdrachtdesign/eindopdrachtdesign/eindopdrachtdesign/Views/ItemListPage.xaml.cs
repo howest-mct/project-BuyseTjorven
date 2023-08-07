@@ -31,12 +31,19 @@ namespace eindopdrachtdesign.Views
             }
             lvwTrelloLists.ItemsSource = items;
 
-            List<Column_value> columns = await BookRepository.GetColumn_ValuesAsync("1243926851", MyBoard.id);
-            foreach(Column_value column in columns)
-            {
-                Console.WriteLine(column.title);
-            }
+        }
 
+        private void lvwTrelloLists_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (lvwTrelloLists.SelectedItem != null)
+            {
+                Item selected = (Item)lvwTrelloLists.SelectedItem;
+                Console.WriteLine("myboard id test");
+                Console.WriteLine(MyBoard.id);
+                Navigation.PushAsync(new ItemDetailPage(selected,MyBoard));
+                //Deselecteren
+                lvwTrelloLists.SelectedItem = null;
+            }
         }
     }
 }

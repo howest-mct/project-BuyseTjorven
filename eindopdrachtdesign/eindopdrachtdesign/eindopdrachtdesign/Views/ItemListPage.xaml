@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eindopdrachtdesign.Views.ItemListPage">
     <ContentPage.Content>
-        <ListView x:Name="lvwTrelloLists" RowHeight="50" SeparatorColor="Transparent">
+        <ListView x:Name="lvwTrelloLists" RowHeight="50" SeparatorColor="Transparent" ItemSelected="lvwTrelloLists_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
