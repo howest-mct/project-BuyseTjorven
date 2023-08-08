@@ -211,5 +211,27 @@ namespace eindopdrachtdesign.Repositories
             }
 
         }
+
+        public async static Task CloseITemAsync(Item item)
+        {
+            //alle nodige info kan in newcolumn gevonden worden.
+
+            //hier request met data van newcolumn ingevuld. Niet met json meesturen zoals in video want da ga nie.
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{ archive_item (item_id: {item.id}) {{ id }} }}\"}}");
+            Console.WriteLine(json);
+            //GraphQlBoardsResponse response;
+
+            if (json != null)
+            {
+                Console.WriteLine(json);
+                //return items;
+            }
+            else
+            {
+                //return null;
+            }
+
+        }
     }
 }

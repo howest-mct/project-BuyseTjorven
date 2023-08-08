@@ -23,7 +23,7 @@ namespace eindopdrachtdesign.Views {
         private global::Xamarin.Forms.ListView lvwTrelloLists;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label lblAddCard;
+        private global::Xamarin.Forms.Label lblAddItem;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnGoBack;
@@ -33,7 +33,7 @@ namespace eindopdrachtdesign.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ItemListPage));
             lblListName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblListName");
             lvwTrelloLists = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "lvwTrelloLists");
-            lblAddCard = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblAddCard");
+            lblAddItem = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblAddItem");
             btnGoBack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnGoBack");
         }
     }

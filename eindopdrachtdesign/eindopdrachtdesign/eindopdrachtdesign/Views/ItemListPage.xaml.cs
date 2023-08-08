@@ -21,7 +21,19 @@ namespace eindopdrachtdesign.Views
             InitializeComponent();
             MyBoard = selected;
             ShowItemsFromBoard();
+            lblListName.Text = MyBoard.name;
+
+            //gesture toevoegen aan label
+            TapGestureRecognizer tapGesture = new TapGestureRecognizer();
+            tapGesture.Tapped += TapGesture_Tapped;
+            lblAddItem.GestureRecognizers.Add(tapGesture);
         }
+
+        private void TapGesture_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddItemPage(MyBoard));
+        }
+
         private async void ShowItemsFromBoard()
         {
             List<Item> items = await BookRepository.GetItemsAsync(MyBoard.id);
@@ -48,11 +60,15 @@ namespace eindopdrachtdesign.Views
 
         private void btnGoBack_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PopAsync(); 
         }
 
-        private void lvwTrelloLists_ItemSelected_1(object sender, SelectedItemChangedEventArgs e)
+        private async void btnCloseCard_Clicked(object sender, EventArgs e)
         {
+            Item item = (sender as Button).BindingContext as Item;
+            //Console.WriteLine(item.name);
+            await BookRepository.CloseITemAsync(item);
+            ShowItemsFromBoard();
 
         }
     }

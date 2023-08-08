@@ -22,6 +22,7 @@ namespace eindopdrachtdesign.Views
             selectedItem = selected;
             InitializeComponent();
             ShowColumsFromItem();
+            lblListName.Text = selected.name;
         }
 
         private async void ShowColumsFromItem()
@@ -36,11 +37,14 @@ namespace eindopdrachtdesign.Views
 
         }
 
-        private async void btnGoBack_Clicked(object sender, EventArgs e)
+        private void btnGoBack_Clicked(object sender, EventArgs e)
         {
             //dit is om eer kaartje aan te maken. Deze code moet hier dus weg en naar de nieuwe pagina...
-            ColumnItems columnItems = new ColumnItems() { name="apitest"};
-            await BookRepository.AddITemAsync(columnItems,MyBoard.id);
+            //ColumnItems columnItems = new ColumnItems() { name="apitest"};
+            //await BookRepository.AddITemAsync(columnItems,MyBoard.id);
+
+            //de juiste code
+            Navigation.PopAsync();
         }
 
         private async void btnUpdateColumn_Clicked(object sender, EventArgs e)
