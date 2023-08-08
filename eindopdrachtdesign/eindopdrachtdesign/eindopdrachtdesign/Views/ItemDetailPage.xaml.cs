@@ -36,7 +36,14 @@ namespace eindopdrachtdesign.Views
 
         }
 
-        private void btnGoBack_Clicked(object sender, EventArgs e)
+        private async void btnGoBack_Clicked(object sender, EventArgs e)
+        {
+            //dit is om eer kaartje aan te maken. Deze code moet hier dus weg en naar de nieuwe pagina...
+            ColumnItems columnItems = new ColumnItems() { name="apitest"};
+            await BookRepository.AddITemAsync(columnItems,MyBoard.id);
+        }
+
+        private void btnUpdateColumn_Clicked(object sender, EventArgs e)
         {
 
         }

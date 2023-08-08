@@ -126,5 +126,54 @@ namespace eindopdrachtdesign.Repositories
                 return null;
             }
         }
+
+        public async static Task AddITemAsync(ColumnItems newcolumn, string BoardID)
+        {
+            //alle nodige info kan in newcolumn gevonden worden.
+
+            //hier request met data van newcolumn ingevuld. Niet met json meesturen zoals in video want da ga nie.
+            string boardId = BoardID;
+            string newItem = newcolumn.name;
+            string statusValue = "Ermee bezig"; //hier moeje dan into columnitems gaan en de juiste er uit halen.
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{create_item (board_id:{boardId}, group_id: \\\"topics\\\", item_name: \\\"{newItem}\\\", column_values: \\\"{{\\\\\\\"status\\\\\\\":\\\\\\\"{statusValue}\\\\\\\", \\\\\\\"text\\\\\\\":\\\\\\\"My Text\\\\\\\"}}\\\") {{id}}}}\"}}");
+            Console.WriteLine(json);
+            //GraphQlBoardsResponse response;
+
+            if (json != null)
+            {
+                Console.WriteLine(json);
+                //return items;
+            }
+            else
+            {
+                //return null;
+            }
+
+        }
+        public async static Task UpdateITemAsync(ColumnItems newcolumn, string BoardID)
+        {
+            //alle nodige info kan in newcolumn gevonden worden.
+
+            //hier request met data van newcolumn ingevuld. Niet met json meesturen zoals in video want da ga nie.
+            string boardId = BoardID;
+            string newItem = newcolumn.name;
+            string statusValue = "Ermee bezig"; //hier moeje dan into columnitems gaan en de juiste er uit halen.
+            var helper = new MondayHelper();
+            string json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{create_item (board_id:{boardId}, group_id: \\\"topics\\\", item_name: \\\"{newItem}\\\", column_values: \\\"{{\\\\\\\"status\\\\\\\":\\\\\\\"{statusValue}\\\\\\\", \\\\\\\"text\\\\\\\":\\\\\\\"My Text\\\\\\\"}}\\\") {{id}}}}\"}}");
+            Console.WriteLine(json);
+            //GraphQlBoardsResponse response;
+
+            if (json != null)
+            {
+                Console.WriteLine(json);
+                //return items;
+            }
+            else
+            {
+                //return null;
+            }
+
+        }
     }
 }

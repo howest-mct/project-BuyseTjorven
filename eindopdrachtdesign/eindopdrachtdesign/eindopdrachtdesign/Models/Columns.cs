@@ -17,6 +17,8 @@ namespace eindopdrachtdesign.Models
     }
     public class ColumnBoard
     {
+        [JsonProperty("id")]
+        public string id { get; set; }
         [JsonProperty("items")]
         public List<ColumnItems> items { get; set; }
     }
@@ -24,10 +26,16 @@ namespace eindopdrachtdesign.Models
     {
         [JsonProperty ("column_values")]
         public List<Column_value> values { get; set; }
+        [JsonProperty ("name")]
+        public string name { get; set; }
     }
     public class Column_value
     {
         [JsonProperty("title")]
         public string title { get; set; }
+        [JsonProperty("id")]
+        public string id { get; set; }
+        [JsonProperty("text")]
+        public string text { get; set; }
     }
 }

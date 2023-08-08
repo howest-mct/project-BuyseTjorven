@@ -45,5 +45,15 @@ namespace eindopdrachtdesign.Views
                 lvwTrelloLists.SelectedItem = null;
             }
         }
+
+        private void btnGoBack_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvwTrelloLists_ItemSelected_1(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }
