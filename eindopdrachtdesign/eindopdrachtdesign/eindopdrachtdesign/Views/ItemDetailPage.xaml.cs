@@ -55,7 +55,7 @@ namespace eindopdrachtdesign.Views
                 Column_value value = (Column_value)lvwCards.SelectedItem;
                 Console.WriteLine(value.text);
                 //Navigation.PushAsync(new ItemListPage(selected));  //iets da er ongeveer zo uitziet xD //pagina moet nog gemaakt worden //op andere pagina moeten deze dingen + de nieuw ingestelde waarde dan worden verstuurd naar functie.
-                await BookRepository.UpdateITemAsync(columnitem, MyBoard.id, value, "Klaar");
+                await BookRepository.UpdateITemAsync(columnitem, MyBoard.id, value, "2024-05-15");
                 lvwCards.SelectedItem = null;
             }
         }

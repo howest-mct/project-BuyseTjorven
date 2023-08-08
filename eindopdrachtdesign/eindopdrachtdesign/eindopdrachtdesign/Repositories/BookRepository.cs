@@ -186,12 +186,12 @@ namespace eindopdrachtdesign.Repositories
                             Console.WriteLine("iets mis met status text");
                             break;
                     }
-                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"index\\\":{indexValue},\\\"post_id\\\":null,\\\"changed_at\\\":\\\"2018-07-30T06:27:07.264Z\\\"}}\" ) {{ id }} }}");
+                    json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{ change_column_value (board_id: {BoardID}, item_id: {itemID}, column_id: \\\"{columnId}\\\", value: \\\"{{\\\\\\\"index\\\\\\\":{indexValue},\\\\\\\"post_id\\\\\\\":null,\\\\\\\"changed_at\\\\\\\":\\\\\\\"2018-07-30T06:27:07.264Z\\\\\\\"}}\\\") {{ id }} }}\"}}");
                     Console.WriteLine(json);
                     break;
                 case "date":
                     dateValue = newvalue;
-                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"date\\\":\\\"{dateValue}\\\",\\\"icon\\\":null,\\\"changed_at\\\":\\\"2023-08-07T09:41:51.344Z\\\"}}\" ) {{ id }} }}");
+                    json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{ change_column_value (board_id: {BoardID}, item_id: {itemID}, column_id: \\\"{columnId}\\\", value: \\\"{{\\\\\\\"date\\\\\\\":\\\\\\\"{dateValue}\\\\\\\",\\\\\\\"icon\\\\\\\":null,\\\\\\\"changed_at\\\\\\\":\\\\\\\"2023-08-07T09:41:51.344Z\\\\\\\"}}\\\") {{ id }} }}\"}}");
                     Console.WriteLine(json);
                     break;
                 default:
