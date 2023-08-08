@@ -90,7 +90,7 @@ namespace eindopdrachtdesign.Repositories
             {
                 response = JsonConvert.DeserializeObject<GraphQlBoardsResponse>(json);
                 List<Item> items = new List<Item>();
-                items = response.data.board[0].items;
+                items = response.data.boards[0].items;
                 return items;
             }
             else
@@ -106,11 +106,11 @@ namespace eindopdrachtdesign.Repositories
             string json = await helper.QueryMondayApiV2($"{{\"query\":\"query{{boards(ids: [{BoardId}]){{items(ids:{ItemId}){{column_values{{title id value text}}}}}}}}\"}}"); //nog aanpassen
             Console.WriteLine(json);
             Console.WriteLine("json geprint van colums");
-            GraphQlColumnsResponse response;
+            GraphQlBoardsResponse response;
 
             if (json != null)
             {
-                response = JsonConvert.DeserializeObject<GraphQlColumnsResponse>(json);
+                response = JsonConvert.DeserializeObject<GraphQlBoardsResponse>(json);
                 List<Column_value> items = new List<Column_value>();
                 if(items != null)
                 {
@@ -129,7 +129,7 @@ namespace eindopdrachtdesign.Repositories
             }
         }
 
-        public async static Task AddITemAsync(ColumnItems newcolumn, string BoardID)
+        public async static Task AddITemAsync(Item newcolumn, string BoardID)
         {
             //alle nodige info kan in newcolumn gevonden worden.
 
@@ -153,7 +153,7 @@ namespace eindopdrachtdesign.Repositories
             }
 
         }
-        public async static Task UpdateITemAsync(ColumnItems item, string BoardID, Column_value value, string newvalue)
+        public async static Task UpdateITemAsync(Item item, string BoardID, Column_value value, string newvalue)
         {
             //dit alles nog aanpassen naar gewooen columItems item aanpassen met juiste dingen en die meesturen ipv alles manueel te doen.
             string boardId = BoardID;

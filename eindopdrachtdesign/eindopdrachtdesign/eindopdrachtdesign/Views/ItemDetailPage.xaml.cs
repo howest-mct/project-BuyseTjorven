@@ -57,7 +57,7 @@ namespace eindopdrachtdesign.Views
             //de geklikte column de value van kunnen  veranderen ---) je moet wel weten wa het orgineel was om de formatting te kunnen doen.
             Board board = MyBoard;
             Item item = selectedItem;
-            ColumnItems columnitem = new ColumnItems();
+            Item columnitem = new Item();
             columnitem.id = item.id;
             if(lvwCards.SelectedItem != null)//probleem als ze op update klikken niet perse dit geselecteerd? wss iets met groupen fzo
             {

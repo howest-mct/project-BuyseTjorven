@@ -5,24 +5,26 @@ using System.Text;
 
 namespace eindopdrachtdesign.Models
 {
-    public class GraphQlColumnsResponse
+    public class GraphQlBoardsResponse
     {
         [JsonProperty("data")]
-        public ColumnBoards data { get; set; }
+        public Boards data { get; set; }
     }
-    public class ColumnBoards
+    public class Boards
     {
         [JsonProperty("boards")]
-        public List<ColumnBoard> boards { get; set; }
+        public List<Board> boards { get; set; }
     }
-    public class ColumnBoard
+    public class Board
     {
         [JsonProperty("id")]
         public string id { get; set; }
+        [JsonProperty("name")]
+        public string name { get; set; }
         [JsonProperty("items")]
-        public List<ColumnItems> items { get; set; }
+        public List<Item> items { get; set; }
     }
-    public class ColumnItems
+    public class Item
     {
         [JsonProperty ("column_values")]
         public List<Column_value> values { get; set; }

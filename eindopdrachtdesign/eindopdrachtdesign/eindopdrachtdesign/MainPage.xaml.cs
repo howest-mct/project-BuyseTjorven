@@ -26,12 +26,12 @@ namespace eindopdrachtdesign
             Console.WriteLine("LoadAsync");
             GraphQlBoardsResponse boards;
             boards = await BookRepository.GetBoards();
-            foreach(Board board in boards.data.board)
+            foreach(Board board in boards.data.boards)
             {
                 Console.WriteLine(board.name);
                 Console.WriteLine(board.id);
             }
-            lvwBoards.ItemsSource = boards.data.board;
+            lvwBoards.ItemsSource = boards.data.boards;
 
 
         }

@@ -33,7 +33,7 @@ namespace eindopdrachtdesign.Views
         {
             //opslaan nieuw item.
             string name = editName.Text;
-            ColumnItems columnitem = new ColumnItems();
+            Item columnitem = new Item();
 
             columnitem.name = name;
 
