@@ -14,6 +14,8 @@ using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 using System.Net;
 using System.IO;
+using System.IO.Pipes;
+using System.ComponentModel.Design;
 
 namespace eindopdrachtdesign.Repositories
 {
@@ -151,17 +153,55 @@ namespace eindopdrachtdesign.Repositories
             }
 
         }
-        public async static Task UpdateITemAsync(ColumnItems newcolumn, string BoardID)
+        public async static Task UpdateITemAsync(ColumnItems item, string BoardID, Column_value value, string newvalue)
         {
             //alle nodige info kan in newcolumn gevonden worden.
-
+            //boardID
+            //itemID
+            //column_value (de klasse)
             //hier request met data van newcolumn ingevuld. Niet met json meesturen zoals in video want da ga nie.
             string boardId = BoardID;
-            string newItem = newcolumn.name;
-            string statusValue = "Ermee bezig"; //hier moeje dan into columnitems gaan en de juiste er uit halen.
+            string itemID = item.id;
+            string columnId = value.id;
+            string indexValue;
+            string dateValue;
+            string json;
             var helper = new MondayHelper();
-            string json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{create_item (board_id:{boardId}, group_id: \\\"topics\\\", item_name: \\\"{newItem}\\\", column_values: \\\"{{\\\\\\\"status\\\\\\\":\\\\\\\"{statusValue}\\\\\\\", \\\\\\\"text\\\\\\\":\\\\\\\"My Text\\\\\\\"}}\\\") {{id}}}}\"}}");
-            Console.WriteLine(json);
+            switch (value.id)
+            {
+                case "person":
+                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"changed_at\\\":\\\"2023-08-08T09:11:56.714Z\\\",\\\"personsAndTeams\\\":[{{\\\"id\\\":45200221,\\\"kind\\\":\\\"person\\\"}}]}}\" ) {{ id }} }}");
+                    Console.WriteLine(json);
+                    break;
+                case "status":
+                    switch (newvalue)
+                    {
+                        case "Klaar":
+                            indexValue = "1";
+                            break;
+                        case "Ermee bezig":
+                            indexValue = "0";
+                            break;
+                        case "Vastgelopen":
+                            indexValue = "2";
+                            break;
+                        default:
+                            indexValue = "";
+                            Console.WriteLine("iets mis met status text");
+                            break;
+                    }
+                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"index\\\":{indexValue},\\\"post_id\\\":null,\\\"changed_at\\\":\\\"2018-07-30T06:27:07.264Z\\\"}}\" ) {{ id }} }}");
+                    Console.WriteLine(json);
+                    break;
+                case "date":
+                    dateValue = newvalue;
+                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"date\\\":\\\"{dateValue}\\\",\\\"icon\\\":null,\\\"changed_at\\\":\\\"2023-08-07T09:41:51.344Z\\\"}}\" ) {{ id }} }}");
+                    Console.WriteLine(json);
+                    break;
+                default:
+                    json = null;
+                    break;
+            }
             //GraphQlBoardsResponse response;
 
             if (json != null)

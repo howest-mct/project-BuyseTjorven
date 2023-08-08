@@ -28,6 +28,8 @@ namespace eindopdrachtdesign.Models
         public List<Column_value> values { get; set; }
         [JsonProperty ("name")]
         public string name { get; set; }
+        [JsonProperty("id")]
+        public string id { get; set; }
     }
     public class Column_value
     {

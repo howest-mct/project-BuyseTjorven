@@ -45,7 +45,8 @@ namespace eindopdrachtdesign.Views
 
         private void btnUpdateColumn_Clicked(object sender, EventArgs e)
         {
-
+            //de geklikte column de value van kunnen  veranderen ---) je moet wel weten wa het orgineel was om de formatting te kunnen doen.
+            //je kan de wel ophalen (zelfde methode als bij selecteren board etc
         }
     }
 }
