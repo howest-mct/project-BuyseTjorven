@@ -20,13 +20,19 @@ namespace eindopdrachtdesign.Views
         {
             InitializeComponent();
             MyBoard = selected;
-            ShowItemsFromBoard();
+            //ShowItemsFromBoard();
             lblListName.Text = MyBoard.name;
 
             //gesture toevoegen aan label
             TapGestureRecognizer tapGesture = new TapGestureRecognizer();
             tapGesture.Tapped += TapGesture_Tapped;
             lblAddItem.GestureRecognizers.Add(tapGesture);
+        }
+        //standaardmethode die wij aanpassen zodat data word geupdate na popasync
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ShowItemsFromBoard();
         }
 
         private void TapGesture_Tapped(object sender, EventArgs e)

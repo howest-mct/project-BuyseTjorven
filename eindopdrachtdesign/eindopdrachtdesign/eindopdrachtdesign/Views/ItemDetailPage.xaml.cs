@@ -21,10 +21,15 @@ namespace eindopdrachtdesign.Views
             MyBoard = Myboard;
             selectedItem = selected;
             InitializeComponent();
-            ShowColumsFromItem();
+            //ShowColumsFromItem();
             lblListName.Text = selected.name;
         }
-
+        //standaardmethode die wij aanpassen zodat data word geupdate na popasync
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ShowColumsFromItem();
+        }
         private async void ShowColumsFromItem()
         {
             List<Column_value> colums = await BookRepository.GetColumn_ValuesAsync(MyBoard.id, selectedItem.id);
