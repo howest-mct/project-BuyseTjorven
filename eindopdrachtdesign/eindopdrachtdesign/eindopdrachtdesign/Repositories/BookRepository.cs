@@ -155,11 +155,7 @@ namespace eindopdrachtdesign.Repositories
         }
         public async static Task UpdateITemAsync(ColumnItems item, string BoardID, Column_value value, string newvalue)
         {
-            //alle nodige info kan in newcolumn gevonden worden.
-            //boardID
-            //itemID
-            //column_value (de klasse)
-            //hier request met data van newcolumn ingevuld. Niet met json meesturen zoals in video want da ga nie.
+            //dit alles nog aanpassen naar gewooen columItems item aanpassen met juiste dingen en die meesturen ipv alles manueel te doen.
             string boardId = BoardID;
             string itemID = item.id;
             string columnId = value.id;
@@ -170,7 +166,7 @@ namespace eindopdrachtdesign.Repositories
             switch (value.id)
             {
                 case "person":
-                    json = await helper.QueryMondayApiV2($"mutation {{ change_column_value (board_id: {boardId}, item_id: {itemID}, column_id: \"{columnId}\", value: \"{{\\\"changed_at\\\":\\\"2023-08-08T09:11:56.714Z\\\",\\\"personsAndTeams\\\":[{{\\\"id\\\":45200221,\\\"kind\\\":\\\"person\\\"}}]}}\" ) {{ id }} }}");
+                    json = await helper.QueryMondayApiV2($"{{\"query\": \"mutation {{ change_column_value (board_id: {BoardID}, item_id: {itemID}, column_id: \\\"{columnId}\\\", value: \\\"{{\\\\\\\"changed_at\\\\\\\":\\\\\\\"2023-08-08T09:11:56.714Z\\\\\\\",\\\\\\\"personsAndTeams\\\\\\\":[{{\\\\\\\"id\\\\\\\":45200221,\\\\\\\"kind\\\\\\\":\\\\\\\"person\\\\\\\"}}]}}\\\") {{ id }} }}\"}}");
                     Console.WriteLine(json);
                     break;
                 case "status":

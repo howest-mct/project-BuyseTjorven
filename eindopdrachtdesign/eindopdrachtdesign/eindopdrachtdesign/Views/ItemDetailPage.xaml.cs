@@ -43,10 +43,21 @@ namespace eindopdrachtdesign.Views
             await BookRepository.AddITemAsync(columnItems,MyBoard.id);
         }
 
-        private void btnUpdateColumn_Clicked(object sender, EventArgs e)
+        private async void btnUpdateColumn_Clicked(object sender, EventArgs e)
         {
             //de geklikte column de value van kunnen  veranderen ---) je moet wel weten wa het orgineel was om de formatting te kunnen doen.
-            //je kan de wel ophalen (zelfde methode als bij selecteren board etc
+            Board board = MyBoard;
+            Item item = selectedItem;
+            ColumnItems columnitem = new ColumnItems();
+            columnitem.id = item.id;
+            if(lvwCards.SelectedItem != null)//probleem als ze op update klikken niet perse dit geselecteerd? wss iets met groupen fzo
+            {
+                Column_value value = (Column_value)lvwCards.SelectedItem;
+                Console.WriteLine(value.text);
+                //Navigation.PushAsync(new ItemListPage(selected));  //iets da er ongeveer zo uitziet xD //pagina moet nog gemaakt worden //op andere pagina moeten deze dingen + de nieuw ingestelde waarde dan worden verstuurd naar functie.
+                await BookRepository.UpdateITemAsync(columnitem, MyBoard.id, value, "Klaar");
+                lvwCards.SelectedItem = null;
+            }
         }
     }
 }
