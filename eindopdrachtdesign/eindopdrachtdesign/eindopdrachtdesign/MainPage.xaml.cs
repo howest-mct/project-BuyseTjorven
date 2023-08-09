@@ -39,6 +39,10 @@ namespace eindopdrachtdesign
             Console.WriteLine("LoadAsync");
             GraphQlBoardsResponse boards;
             boards = await BookRepository.GetBoards();
+            while(boards == null)
+            {
+                boards = await BookRepository.GetBoards();
+            }
             foreach(Board board in boards.data.boards)
             {
                 Console.WriteLine(board.name);
