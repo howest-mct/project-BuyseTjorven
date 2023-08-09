@@ -59,7 +59,7 @@
 
 
             <Grid Grid.Row="2" Margin="4,0">
-                <Button x:Name="btnGoBack" Clicked="btnGoBack_Clicked" Text="Back to lists" />
+                <Button x:Name="btnGoBack" Clicked="btnGoBack_Clicked" Text="Back to items" />
             </Grid>
         </Grid>
     </ContentPage.Content>

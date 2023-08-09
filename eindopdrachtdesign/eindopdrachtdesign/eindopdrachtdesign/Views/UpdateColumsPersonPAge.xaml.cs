@@ -23,6 +23,7 @@ namespace eindopdrachtdesign.Views
             SelectedItem = item;
             SelectedValue = value;
             InitializeComponent();
+            Title = "Persoon aanpassen";
             //method maken die de huidige waarden klaarzet?
         }
         private async void btnSave_Clicked(object sender, EventArgs e)
@@ -30,8 +31,16 @@ namespace eindopdrachtdesign.Views
             Board board = Myboard;
             Item item = SelectedItem;
             Column_value value = SelectedValue;
-            await BookRepository.UpdateITemAsync(item, board.id, value, "");
-            Navigation.PopAsync();
+            //Console.WriteLine(namefrompicker.SelectedItem);
+            if(namefrompicker.SelectedItem != null)
+            {
+                await BookRepository.UpdateITemAsync(item, board.id, value, "");
+                Navigation.PopAsync();
+            }
+            else
+            {
+                lblBoard.Text = "Geen persoon ingegeven";
+            }
 
         }
 

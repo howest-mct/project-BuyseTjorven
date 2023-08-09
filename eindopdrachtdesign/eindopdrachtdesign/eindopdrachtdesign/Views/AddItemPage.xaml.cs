@@ -20,8 +20,8 @@ namespace eindopdrachtdesign.Views
             InitializeComponent();
             Myboard = myBoard;
 
-            lblBoard.Text = myBoard.name;
-            Title = "Add a new item";
+            lblBoard.Text = "Geef de naam van het nieuwe item in";
+            Title = "Item toevoegen aan" + myBoard.name;
         }
 
         private void btnCancel_Clicked(object sender, EventArgs e)

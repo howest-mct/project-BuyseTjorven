@@ -24,21 +24,31 @@ namespace eindopdrachtdesign.Views
             SelectedValue = value;
             InitializeComponent();
             //method maken die de huidige waarden klaarzet?
+            Title = "Status aanpassen";
         }
 
-        private void btnCancel_Clicked_1(object sender, EventArgs e)
+        private void btnCancel_Clicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
 
-        private async void btnSave_Clicked_1(object sender, EventArgs e)
+        private async void btnSave_Clicked(object sender, EventArgs e)
         {
             
             Board board = Myboard;
             Item item = SelectedItem;
             Column_value value = SelectedValue;
-            await BookRepository.UpdateITemAsync(item, board.id, value, "Ermee bezig");
-            Navigation.PopAsync();
+            //Console.WriteLine(state);
+            if (namefrompicker.SelectedItem != null)
+            {
+                string state = namefrompicker.SelectedItem.ToString();
+                await BookRepository.UpdateITemAsync(item, board.id, value, state);
+                Navigation.PopAsync();
+            }
+            else
+            {
+                lblBoard.Text = "Geen status ingegeven";
+            }
         }
     }
 }
