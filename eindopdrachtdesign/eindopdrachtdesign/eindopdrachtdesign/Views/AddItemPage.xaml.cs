@@ -21,7 +21,7 @@ namespace eindopdrachtdesign.Views
             Myboard = myBoard;
 
             lblBoard.Text = "Geef de naam van het nieuwe item in";
-            Title = "Item toevoegen aan" + myBoard.name;
+            Title = "Item toevoegen aan " + myBoard.name;
         }
 
         private void btnCancel_Clicked(object sender, EventArgs e)
@@ -33,12 +33,19 @@ namespace eindopdrachtdesign.Views
         {
             //opslaan nieuw item.
             string name = editName.Text;
-            Item columnitem = new Item();
+            if(editName.Text != null)
+            {
+                Item columnitem = new Item();
 
-            columnitem.name = name;
+                columnitem.name = name;
 
-            await BookRepository.AddITemAsync(columnitem, Myboard.id);
-            Navigation.PopAsync();
+                await BookRepository.AddITemAsync(columnitem, Myboard.id);
+                Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Fout", "Geen naam opgegeven", "OK");
+            }
         }
     }
 }

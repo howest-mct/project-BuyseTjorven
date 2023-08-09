@@ -38,7 +38,8 @@ namespace eindopdrachtdesign.Views
 
             if (dt == DateTime.MinValue) {
                 //error weergeven
-                lblBoard.Text = "Ongeldige datum ingegeven";
+                await DisplayAlert("Fout", "Ongeldige datum opgegeven", "OK");
+                //lblBoard.Text = "Ongeldige datum ingegeven";
             }
             else
             {

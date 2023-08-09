@@ -39,7 +39,8 @@ namespace eindopdrachtdesign.Views
             }
             else
             {
-                lblBoard.Text = "Geen persoon ingegeven";
+                await DisplayAlert("Fout", "Geen persoon geselecteerd", "OK");
+                //lblBoard.Text = "Geen persoon ingegeven";
             }
 
         }

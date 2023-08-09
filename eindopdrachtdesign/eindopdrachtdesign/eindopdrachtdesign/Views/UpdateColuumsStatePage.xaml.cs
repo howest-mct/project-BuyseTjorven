@@ -47,7 +47,8 @@ namespace eindopdrachtdesign.Views
             }
             else
             {
-                lblBoard.Text = "Geen status ingegeven";
+                //lblBoard.Text = "Geen status ingegeven";
+                await DisplayAlert("Fout", "Geen status geselecteerd", "OK");
             }
         }
     }
