@@ -44,11 +44,7 @@
                                                 <Button Text="Update" FontSize="Micro" x:Name="btnUpdateColumn" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnUpdateColumn_Clicked" />
                                                 <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                                                     <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/comments-xxl.png" VerticalOptions="Center" HeightRequest="9"  />-->
-                                                    <Label FontSize="Micro" Text="comments:" />
-                                                    <Label Text="{Binding CardInfo.NumComments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
-                                                    <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/attach-2-xxl.png" VerticalOptions="Center" HeightRequest="9" />-->
-                                                    <Label FontSize="Micro" Text="attachments:" />
-                                                    <Label Text="{Binding CardInfo.NumAttachments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
+                                                    <Label FontSize="Micro" Text="{Binding text}" TextColor="Black" />
                                                 </StackLayout>
                                             </Grid>
                                         </Frame>

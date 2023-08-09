@@ -42,14 +42,7 @@
                                                 <Label Text="{Binding name}" VerticalOptions="Center" TextColor="#333333" />
                                                 <!-- handle this button click to create a PUT request that changes the card's closed state -->
                                                 <Button Text="CLOSE" FontSize="Micro" x:Name="btnCloseCard" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" Clicked="btnCloseCard_Clicked"/>
-                                                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-                                                    <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/comments-xxl.png" VerticalOptions="Center" HeightRequest="9"  />-->
-                                                    <Label FontSize="Micro" Text="comments:" />
-                                                    <Label Text="{Binding CardInfo.NumComments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
-                                                    <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/attach-2-xxl.png" VerticalOptions="Center" HeightRequest="9" />-->
-                                                    <Label FontSize="Micro" Text="attachments:" />
-                                                    <Label Text="{Binding CardInfo.NumAttachments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
-                                                </StackLayout>
+                                                
                                             </Grid>
                                         </Frame>
                                     </ViewCell>

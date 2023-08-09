@@ -23,6 +23,7 @@ namespace eindopdrachtdesign.Views
             SelectedItem = item;
             SelectedValue = value;
             InitializeComponent();
+            Title = "datum aanpassen";
             //method maken die de huidige waarden klaarzet?
         }
 
@@ -31,8 +32,19 @@ namespace eindopdrachtdesign.Views
             Board board = Myboard;
             Item item = SelectedItem;
             Column_value value = SelectedValue;
-            await BookRepository.UpdateITemAsync(item, board.id, value, "2024-05-15");
-            Navigation.PopAsync();
+            string date = editName.Text;
+            DateTime dt;
+            DateTime.TryParseExact(date, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out dt);
+
+            if (dt == DateTime.MinValue) {
+                //error weergeven
+                Title = "ongeldige datum ingegeven";
+            }
+            else
+            {
+                await BookRepository.UpdateITemAsync(item, board.id, value, date);
+                Navigation.PopAsync();
+            }
 
         }
 
