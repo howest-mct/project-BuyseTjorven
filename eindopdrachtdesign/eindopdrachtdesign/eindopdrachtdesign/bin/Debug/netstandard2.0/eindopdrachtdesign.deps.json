@@ -13,7 +13,7 @@
           "GraphQL.Client.Serializer.Newtonsoft": "5.0.2",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
-          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Essentials": "1.7.7",
           "Xamarin.Forms": "5.0.0.2196"
         },
         "runtime": {
@@ -146,7 +146,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.7.0": {
+      "Xamarin.Essentials/1.7.7": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -286,12 +286,12 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.7.0": {
+    "Xamarin.Essentials/1.7.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xfUJNxtfMC05VBej7fVUg6Zd9VwM2kqW9LH0tcrSA6IsBTl0EsIGkYUOz1BoKT2rseWW8o3kTi5WH/yZV4GgJw==",
-      "path": "xamarin.essentials/1.7.0",
-      "hashPath": "xamarin.essentials.1.7.0.nupkg.sha512"
+      "sha512": "sha512-vcRWRCO3yK1fCbcUIMVgV09x7z9SbLNhw4Tt2OYfps+YDgmGaDfw4Qn3uEKQm9LPV0S0PDklPSJT3R+7mtix/w==",
+      "path": "xamarin.essentials/1.7.7",
+      "hashPath": "xamarin.essentials.1.7.7.nupkg.sha512"
     },
     "Xamarin.Forms/5.0.0.2196": {
       "type": "package",

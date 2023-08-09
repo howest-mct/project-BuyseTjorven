@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,7 +29,15 @@ namespace eindopdrachtdesign.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ShowColumsFromItem();
+            if (Connectivity.NetworkAccess.ToString() == "Internet")
+            {
+                ShowColumsFromItem();
+            }
+            else
+            {
+                Navigation.PushAsync(new NoNetworkPage());
+            }
+
         }
         private async void ShowColumsFromItem()
         {

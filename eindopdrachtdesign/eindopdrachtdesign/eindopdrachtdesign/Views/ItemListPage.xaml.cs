@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace eindopdrachtdesign.Views
 {
@@ -32,7 +33,14 @@ namespace eindopdrachtdesign.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ShowItemsFromBoard();
+            if (Connectivity.NetworkAccess.ToString() == "Internet")
+            {
+                ShowItemsFromBoard();
+            }
+            else
+            {
+                Navigation.PushAsync(new NoNetworkPage());
+            }
         }
 
         private void TapGesture_Tapped(object sender, EventArgs e)

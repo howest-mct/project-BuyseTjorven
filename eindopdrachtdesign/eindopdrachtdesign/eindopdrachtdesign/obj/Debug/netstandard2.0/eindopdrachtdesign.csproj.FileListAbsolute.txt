@@ -20,3 +20,4 @@ C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\Views\UpdateColumnsPage.xaml.g.cs
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\Views\UpdateColumsPersonPAge.xaml.g.cs
 C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\Views\UpdateColuumsStatePage.xaml.g.cs
+C:\designeind\eindopdrachtdesign\eindopdrachtdesign\eindopdrachtdesign\obj\Debug\netstandard2.0\Views\NoNetworkPage.xaml.g.cs

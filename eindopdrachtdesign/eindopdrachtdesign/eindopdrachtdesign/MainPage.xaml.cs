@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace eindopdrachtdesign
 {
@@ -16,10 +17,22 @@ namespace eindopdrachtdesign
         public MainPage()
         {
             InitializeComponent();
-            LoadBoardsAsync();
             Console.WriteLine("mainpageload done!!");
-        }
+            //Console.WriteLine(Connectivity.NetworkAccess);
 
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (Connectivity.NetworkAccess.ToString() == "Internet")
+            {
+                LoadBoardsAsync();
+            }
+            else
+            {
+                Navigation.PushAsync(new NoNetworkPage());
+            }
+        }
         private async void LoadBoardsAsync()
         {
             int i = 0;
@@ -48,4 +61,5 @@ namespace eindopdrachtdesign
             }
         }
     }
+
 }
