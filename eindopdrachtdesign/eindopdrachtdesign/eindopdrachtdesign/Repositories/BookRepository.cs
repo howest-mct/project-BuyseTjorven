@@ -170,6 +170,8 @@ namespace eindopdrachtdesign.Repositories
                     Console.WriteLine(json);
                     break;
                 case "status":
+                    Console.WriteLine("status bereikt");
+                    Console.WriteLine(newvalue);
                     switch (newvalue)
                     {
                         case "Klaar":

@@ -54,18 +54,18 @@ namespace eindopdrachtdesign.Views
 
         private async void btnUpdateColumn_Clicked(object sender, EventArgs e)
         {
-            //de geklikte column de value van kunnen  veranderen ---) je moet wel weten wa het orgineel was om de formatting te kunnen doen.
-            Board board = MyBoard;
-            Item item = selectedItem;
-            Item columnitem = new Item();
-            columnitem.id = item.id;
-            if(lvwCards.SelectedItem != null)//probleem als ze op update klikken niet perse dit geselecteerd? wss iets met groupen fzo
+            Column_value value = (sender as Button).BindingContext as Column_value;
+            switch (value.id)
             {
-                Column_value value = (Column_value)lvwCards.SelectedItem;
-                Console.WriteLine(value.text);
-                //Navigation.PushAsync(new ItemListPage(selected));  //iets da er ongeveer zo uitziet xD //pagina moet nog gemaakt worden //op andere pagina moeten deze dingen + de nieuw ingestelde waarde dan worden verstuurd naar functie.
-                await BookRepository.UpdateITemAsync(columnitem, MyBoard.id, value, "2024-05-15");
-                lvwCards.SelectedItem = null;
+                case "person":
+                    await Navigation.PushAsync(new UpdateColumsPersonPAge(MyBoard, selectedItem, value));
+                    break;
+                case "date":
+                    await Navigation.PushAsync(new UpdateColumnsPage(MyBoard, selectedItem, value));
+                    break;
+                case "status":
+                    await Navigation.PushAsync(new UpdateColuumsStatePage(MyBoard, selectedItem, value));
+                    break;
             }
         }
     }
