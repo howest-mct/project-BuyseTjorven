@@ -33,14 +33,7 @@ namespace eindopdrachtdesign.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Connectivity.NetworkAccess.ToString() == "Internet")
-            {
-                ShowItemsFromBoard();
-            }
-            else
-            {
-                Navigation.PushAsync(new NoNetworkPage());
-            }
+            ShowItemsFromBoard();
         }
 
         private void TapGesture_Tapped(object sender, EventArgs e)

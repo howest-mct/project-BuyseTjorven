@@ -29,14 +29,7 @@ namespace eindopdrachtdesign.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Connectivity.NetworkAccess.ToString() == "Internet")
-            {
-                ShowColumsFromItem();
-            }
-            else
-            {
-                Navigation.PushAsync(new NoNetworkPage());
-            }
+            ShowColumsFromItem();
 
         }
         private async void ShowColumsFromItem()
